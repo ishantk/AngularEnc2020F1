@@ -1,0 +1,22 @@
+<h3>Manage Users</h3>
+
+<div class="form-group">
+  <label>Name:</label>
+  <input type="text" [formControl]="name" class="form-control" placeholder="Enter Your Name">
+</div>
+
+<h4>
+    You Enetered: {{name.value}}
+</h4>
+
+<p>
+    <button  class="btn btn-default" (click)="updateData()">Search User</button>
+</p>
+
+<h3>List of Users</h3>
+
+<ul>
+  <li class="text" *ngFor="let user of users | async">
+    {{user.name}} | {{user.email}}
+  </li>
+</ul>
